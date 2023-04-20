@@ -1,11 +1,19 @@
 import cv2
 import mediapipe
-import processing_py as pr
 
-drawing_module = mediapipe.solutions.drawing_utils
-hands_module = mediapipe.solutions.hands
+class HandExtractor():
+    def __init__(self, capture):
+        self.drawing_module = mediapipe.solutions.drawing_utils
+        self.hands_module = mediapipe.solutions.hands
+        self.capture = capture
+        pass
 
-capture = cv2.VideoCapture(0)
+    def get_gesture_coords():
+        pass
+
+    def is_pinched():
+        pass
+
 
 with hands_module.Hands(
     static_image_mode=False,
@@ -34,14 +42,3 @@ with hands_module.Hands(
 
 cv2.destroyAllWindows()
 capture.release()
-
-
-def main():
-    app = pr.App(600,400)
-    app.background(255,0,0)
-    app.redraw()
-
-#app.exit() # close the window
-
-if __name__=="__main__":
-    main()
